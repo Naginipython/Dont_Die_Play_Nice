@@ -1,0 +1,10 @@
+^C:\USERS\SAMIR\ONEDRIVE\DESKTOP\LAPTOP ZOOB\DESKTOP\DONT_DIE_PLAY_NICE\BUILD\CMAKEFILES\E4EA9CA34F698D16FCD553FF52F265F7\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/samir/OneDrive/Desktop/Laptop Zoob/Desktop/Dont_Die_Play_Nice/src" "-BC:/Users/samir/OneDrive/Desktop/Laptop Zoob/Desktop/Dont_Die_Play_Nice/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/samir/OneDrive/Desktop/Laptop Zoob/Desktop/Dont_Die_Play_Nice/build/DontDiePlayNice.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

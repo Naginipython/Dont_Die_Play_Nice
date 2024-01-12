@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\samir\OneDrive\Desktop\Laptop Zoob\Desktop\Dont_Die_Play_Nice\build\CMakeFiles\e4ea9ca34f698d16fcd553ff52f265f7\NightlyMemoryCheck.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\samir\OneDrive\Desktop\Laptop Zoob\Desktop\Dont_Die_Play_Nice\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\samir\OneDrive\Desktop\Laptop Zoob\Desktop\Dont_Die_Play_Nice\build\CMakeFiles\NightlyMemoryCheck" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{9AA4C264-92B1-3D16-99E1-714A91B54A4C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
