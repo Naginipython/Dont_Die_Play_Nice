@@ -1,5 +1,6 @@
 # Dont_Die_Play_Nice
 
+- [ ] Map generation
 - [ ] Player Movement (What kinds of movements? Jump, Dash, etc?)
 - [ ] Camera
 - [ ] Platformer
