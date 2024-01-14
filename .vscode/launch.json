@@ -6,10 +6,10 @@
             "name": "Launch",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/debug/DontDiePlayNice.exe",
+            "program": "${workspaceFolder}/DDPN.exe",
             "args": [],
             "cwd":"${workspaceFolder}",
-            "console": "integratedTerminal"
+            "console": "externalTerminal"
         }
     ]
 }

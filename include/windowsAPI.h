@@ -3,7 +3,9 @@
 #define NOMINMAX
 #include <windows.h>
 
-bool win32_create_window(int width, int height, char* title) {
+HWND window;
+
+bool win_create_window(int width, int height, char* title) {
     HINSTANCE instance = GetModuleHandleA(0);
     WNDCLASS wc = {};
     wc.hInstance = instance;
@@ -18,18 +20,18 @@ bool win32_create_window(int width, int height, char* title) {
 
     int dwStyle = WS_OVERLAPPEDWINDOW;
 
-    HWND window = CreateWindowExA(0,
-                                  title,
-                                  title,
-                                  dwStyle,
-                                  100,
-                                  100,
-                                  width,
-                                  height,
-                                  NULL,
-                                  NULL,
-                                  instance,
-                                  NULL
+    window = CreateWindowExA(0,
+                            title,
+                            title,
+                            dwStyle,
+                            100,
+                            100,
+                            width,
+                            height,
+                            NULL,
+                            NULL,
+                            instance,
+                            NULL
     );
 
     if (window == NULL) {
@@ -39,6 +41,15 @@ bool win32_create_window(int width, int height, char* title) {
     ShowWindow(window, SW_SHOW);
 
     return true;
+}
+
+void win_update_window() {
+    MSG msg;
+
+    while (PeekMessageA(&msg, window, 0, 0, PM_REMOVE)) {
+        TranslateMessage(&msg);
+        DispatchMessage(&msg);
+    }
 }
 
 #endif
