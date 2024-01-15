@@ -26,10 +26,11 @@ int main() {
 
     // mainloop
     while (gameloopRunning) {
-        // SM_TRACE("test");
-        // SM_WARN("test");
-        // SM_ERROR("test");
-        // SM_ASSERT(false, "Assert failed");
+        SM_TRACE("test");
+        SM_WARN("test");
+        SM_ERROR("test");
+        SM_ASSERT(false, "Assert failed");
+        break;
         update_window();
         // if (debug) {
         //     if (!promptedGLRunning) {
