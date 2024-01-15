@@ -1,3 +1,4 @@
+#include <X11/Xutil.h>
 #include "linuxAPI.h"
 
 bool create_window(int width, int height, std::string title) {
@@ -12,6 +13,7 @@ bool create_window(int width, int height, std::string title) {
         BlackPixel(display, screen), WhitePixel(display, screen));
 
     XStoreName(display, window, title.c_str());
+    XSelectInput(display, window, KeyPressMask);
 
     XMapWindow(display, window);
 
@@ -19,11 +21,28 @@ bool create_window(int width, int height, std::string title) {
 }
 
 void update_window() { 
+    // std::cout << "entered linux update_window" << std::endl;
     XEvent event;
-    while (!XNextEvent(display, &event)) {
+    if (XPending(display)) {
+        XNextEvent(display, &event);
+        printf("EVENT: %d\n", event.type);
 
+        if (event.type == KeyPress) {
+            printf("KeyPress Event: %d\n", event.xkey.keycode);
+            KeySym keysym = XLookupKeysym(&event.xkey, 0);
+            switch (keysym) {
+                case XK_Up: printf("Pressed Up\n"); break;
+                case XK_Right: printf("Pressed Right\n"); break;
+                case XK_Down: printf("Pressed Down\n"); break;
+                case XK_Left: printf("Pressed Left\n"); break;
+                case XK_space: printf("Pressed space\n"); break;
+                case XK_Escape: printf("Pressed Esc\n"); break;
+            }
+        }
     }
-    XPending(display);
+    // while (!XNextEvent(display, &event)) {
+    //     std::cout << "inside linux update_window loop" << std::endl;
+    // }
 }
 
 void kill_window() {
