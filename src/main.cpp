@@ -34,5 +34,7 @@ int main() {
         }
     }
 
+    kill_window();
+
     return 0;
 }

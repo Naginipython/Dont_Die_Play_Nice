@@ -1,6 +1,5 @@
 #pragma once
 
-#ifdef _WIN32
 #define WIN32_LEAN_AND_MEAN
 #define NOMINMAX
 #include <windows.h>
@@ -13,5 +12,3 @@ LRESULT CALLBACK window_callback(HWND win, UINT msg, WPARAM wParam, LPARAM lPara
 bool create_window(int width, int height, char* title);
 
 void update_window();
-
-#endif
