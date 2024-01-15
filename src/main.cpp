@@ -12,6 +12,7 @@
 #include <thread>
 #include "generator.h"
 #include "console.h"
+#include "ddpn_lib.h"
 
 using namespace std;
 
@@ -25,13 +26,17 @@ int main() {
 
     // mainloop
     while (gameloopRunning) {
+        // SM_TRACE("test");
+        // SM_WARN("test");
+        // SM_ERROR("test");
+        // SM_ASSERT(false, "Assert failed");
         update_window();
-        if (debug) {
-            if (!promptedGLRunning) {
-                cout << "Running: Gameloop" << endl;
-                promptedGLRunning = true;
-            }
-        }
+        // if (debug) {
+        //     if (!promptedGLRunning) {
+        //         cout << "Running: Gameloop" << endl;
+        //         promptedGLRunning = true;
+        //     }
+        // }
     }
 
     kill_window();
