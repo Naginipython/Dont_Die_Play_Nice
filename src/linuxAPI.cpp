@@ -9,7 +9,9 @@ bool create_window(int width, int height, std::string title) {
     screen = DefaultScreen(display);
 
     window = XCreateSimpleWindow(display, RootWindow(display, screen), POSX, POSY, width, height, 1,
-                            BlackPixel(display, screen), WhitePixel(display, screen));
+        BlackPixel(display, screen), WhitePixel(display, screen));
+
+    XStoreName(display, window, title.c_str());
 
     XMapWindow(display, window);
 
