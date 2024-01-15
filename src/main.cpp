@@ -1,6 +1,8 @@
 #if __WIN32
     #include "windowsAPI.h"
+    int os = 0;
 #elif __linux__
+    #include "linuxAPI.h"
     int os = 1;
 #else
     int os = 2;
