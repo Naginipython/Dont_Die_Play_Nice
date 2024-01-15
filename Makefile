@@ -1,14 +1,13 @@
 all:
-	echo nothing
 
-buildwin: all
+win: all
 	g++ src/main.cpp -I include -o DDPN
 
-buildlinux: all
+linux: all
 	g++ -lX11 src/main.cpp -I include -o DDPN
 
-runwin: all
+runw: all
 	./DDPN.exe
 
-runlinux: all
+runl: all
 	./DDPN
