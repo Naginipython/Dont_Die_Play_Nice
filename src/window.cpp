@@ -1,6 +1,6 @@
 #include "windowsAPI.h"
 
-bool win_create_window(int width, int height, char* title) {
+bool create_window(int width, int height, char* title) {
     HINSTANCE instance = GetModuleHandleA(0);
     WNDCLASS wc = {};
     wc.hInstance = instance;
@@ -38,7 +38,7 @@ bool win_create_window(int width, int height, char* title) {
     return true;
 }
 
-void win_update_window() {
+void update_window() {
     MSG msg;
 
     while (PeekMessageA(&msg, window, 0, 0, PM_REMOVE)) {

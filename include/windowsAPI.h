@@ -5,16 +5,21 @@
 #define NOMINMAX
 #include <windows.h>
 
+
 HWND window;
 
-bool win_create_window(int width, int height, char* title); //{
-//     HINSTANCE instance = GetModuleHandleA(0);
-//     WNDCLASS wc = {};
-//     wc.hInstance = instance;
-//     wc.hIcon = LoadIcon(instance, IDI_APPLICATION);
-//     wc.hCursor = LoadCursor(NULL, IDC_ARROW);
-//     wc.lpszClassName = title;
-//     wc.lpfnWndProc = DefWindowProcA; // TODO: fix window proc id
+LRESULT CALLBACK window_callback(HWND win, UINT msg, WPARAM wParam, LPARAM lParam) {
+    
+}
+
+bool create_window(int width, int height, char* title) //{
+    // HINSTANCE instance = GetModuleHandleA(0);
+    // WNDCLASS wc = {};
+    // wc.hInstance = instance;
+    // wc.hIcon = LoadIcon(instance, IDI_APPLICATION);
+    // wc.hCursor = LoadCursor(NULL, IDC_ARROW);
+    // wc.lpszClassName = title;
+    // wc.lpfnWndProc = DefWindowProcA; // TODO: fix window proc id
 
 //     if (!RegisterClassA(&wc)) {
 //         return false;
@@ -45,16 +50,6 @@ bool win_create_window(int width, int height, char* title); //{
 //     return true;
 // }
 
-void win_update_window(); //{
-//     MSG msg;
-
-//     while (PeekMessageA(&msg, window, 0, 0, PM_REMOVE)) {
-//         TranslateMessage(&msg);
-//         DispatchMessage(&msg);
-//     }
-// }
-
-#else 
-
+void update_window();
 
 #endif
