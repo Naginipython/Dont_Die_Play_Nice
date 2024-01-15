@@ -1,6 +1,6 @@
-DDPN.exe
-*.o
-*.dll
+**/*.exe
+**/*.o
+**/*.dll
 
 build/
 .vscode/
