@@ -1,6 +1,8 @@
-*.exe
+DDPN.exe
 *.o
 *.dll
 
 build/
 .vscode/
+
+DDPN
