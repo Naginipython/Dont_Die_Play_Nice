@@ -3,9 +3,14 @@
 #define NOMINMAX
 #include <windows.h>
 
+
 HWND window;
 
-bool win_create_window(int width, int height, char* title) {
+LRESULT CALLBACK window_callback(HWND win, UINT msg, WPARAM wParam, LPARAM lParam) {
+    
+}
+
+bool create_window(int width, int height, char* title) {
     HINSTANCE instance = GetModuleHandleA(0);
     WNDCLASS wc = {};
     wc.hInstance = instance;
@@ -43,7 +48,7 @@ bool win_create_window(int width, int height, char* title) {
     return true;
 }
 
-void win_update_window() {
+void update_window() {
     MSG msg;
 
     while (PeekMessageA(&msg, window, 0, 0, PM_REMOVE)) {
