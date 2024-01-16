@@ -1,7 +1,7 @@
 #pragma once
 #include "ddpn_lib.h"
 #include "glcorearb.h"
-#include "platform.h"
+#include "platformAPI.h"
 
 static PFNGLCREATEPROGRAMPROC glCreateProgram_ptr;
 static PFNGLDELETETEXTURESPROC glDeleteTextures_ptr;
