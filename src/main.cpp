@@ -1,18 +1,14 @@
-#if __WIN32
-    #include "windowsAPI.h"
-    int os = 0;
-#elif __linux__
-    #include "linuxAPI.h"
-    int os = 1;
-#else
-    int os = 2;
-#endif
-
 #include <iostream>
 #include <thread>
-#include "generator.h"
-#include "console.h"
+#include "generator.h" // ?
+#include "console.h" // ?
 #include "ddpn_lib.h"
+
+#define APIENTRY
+#include "glcorearb.h"
+
+#include "platform.h"
+#include "gl_renderer.h"
 
 using namespace std;
 
@@ -31,12 +27,12 @@ int main() {
         // SM_ERROR("test");
         // SM_ASSERT(false, "Assert failed");
         update_window();
-        // if (debug) {
-        //     if (!promptedGLRunning) {
-        //         cout << "Running: Gameloop" << endl;
-        //         promptedGLRunning = true;
-        //     }
-        // }
+        if (debug) {
+            if (!promptedGLRunning) {
+                cout << "Running: Gameloop" << endl;
+                promptedGLRunning = true;
+            }
+        }
     }
 
     kill_window();

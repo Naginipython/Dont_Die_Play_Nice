@@ -1,6 +1,6 @@
-#include "windowsAPI.h"
+#include "platform.h"
 
-bool create_window(int width, int height, char* title) {
+bool create_window(int width, int height, std::string title) {
     HINSTANCE instance = GetModuleHandleA(0);
     WNDCLASS wc = {};
     wc.hInstance = instance;
@@ -16,8 +16,8 @@ bool create_window(int width, int height, char* title) {
     int dwStyle = WS_OVERLAPPEDWINDOW;
 
     window = CreateWindowExA(0,
-                            title,
-                            title,
+                            title.c_str(),
+                            title.c_str(),
                             dwStyle,
                             100,
                             100,
@@ -45,4 +45,17 @@ void update_window() {
         TranslateMessage(&msg);
         DispatchMessage(&msg);
     }
+}
+
+void* platform_load_gl_function(char* funName) {
+    PROC proc = wglGetProcAddress(funName);
+    if (!proc) {
+        static HMODULE openglDLL = LoadLibraryA("opengl32.dll");
+        proc = wglGetProcAddress(openglDLL, funName);
+        if (!proc) {
+            SM_ASSERT(false, "Failed to load gl functions %s", "glCreatreProgram");
+            return nullptr;
+        }
+    }
+    return (void*) proc;
 }

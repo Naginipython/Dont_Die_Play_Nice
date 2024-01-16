@@ -1,5 +1,6 @@
 #include <X11/Xutil.h>
-#include "linuxAPI.h"
+#include <iostream>
+#include "platform.h"
 
 bool create_window(int width, int height, std::string title) {
     display = XOpenDisplay(NULL);
@@ -20,8 +21,7 @@ bool create_window(int width, int height, std::string title) {
     return true;
 }
 
-void update_window() { 
-    // std::cout << "entered linux update_window" << std::endl;
+void update_window() {
     XEvent event;
     if (XPending(display)) {
         XNextEvent(display, &event);
