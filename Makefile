@@ -1,5 +1,5 @@
 FILES = src/main.cpp src/ddpn_lib_impl.cpp
-INCS = -I include -I extern_libs
+INCS = -I include -I OpenGL
 
 all:
 
