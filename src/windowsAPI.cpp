@@ -1,4 +1,24 @@
+#include <stdlib.h>
+
 #include "windowsAPI.h"
+
+HWND window;
+
+LRESULT CALLBACK window_callback(HWND window, UINT msg, WPARAM wParam, LPARAM lParam) {
+    LRESULT result = 0;
+
+    switch (msg) {
+        case WM_CLOSE: {
+            exit(0);
+            break;
+        }
+        default: {
+            result = DefWindowProcA(window, msg, wParam, lParam);
+        }
+    }
+
+    return result;
+}
 
 bool create_window(int width, int height, char* title) {
     HINSTANCE instance = GetModuleHandleA(0);
@@ -7,7 +27,7 @@ bool create_window(int width, int height, char* title) {
     wc.hIcon = LoadIcon(instance, IDI_APPLICATION);
     wc.hCursor = LoadCursor(NULL, IDC_ARROW);
     wc.lpszClassName = title;
-    wc.lpfnWndProc = DefWindowProcA; // TODO: fix window proc id
+    wc.lpfnWndProc = window_callback; // TODO: fix window proc id
 
     if (!RegisterClassA(&wc)) {
         return false;
