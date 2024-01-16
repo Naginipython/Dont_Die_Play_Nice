@@ -1,15 +1,6 @@
-#if __WIN32
-    #include "windowsAPI.h"
-    int os = 0;
-#elif __linux__
-    #include "linuxAPI.h"
-    int os = 1;
-#else
-    int os = 2;
-#endif
-
 #include <iostream>
 #include <thread>
+#include "platformAPI.h"
 #include "generator.h"
 #include "console.h"
 #include "ddpn_lib.h"
@@ -39,7 +30,7 @@ int main() {
         // }
     }
 
-    kill_window();
+    // kill_window();
 
     return 0;
 }

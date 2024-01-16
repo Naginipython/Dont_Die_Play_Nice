@@ -1,6 +1,10 @@
 #include <stdlib.h>
+#include <Windows.h>
 
 #include "windowsAPI.h"
+#define WIN32_LEAN_AND_MEAN
+#define NOMINMAX
+
 
 HWND window;
 
